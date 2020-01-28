@@ -20,12 +20,28 @@ public class Move : MonoBehaviour
     //Detect collision with another object
      void OnCollisionEnter(Collision other)
     {
-        
+        Debug.Log("Colliding with an object");
+
+        if (other.gameObject.CompareTag("Floor")) //Primary
+        {
+            Debug.Log("Colliding with Floor");
+        }
+        else if (other.gameObject.CompareTag("Obstacle")) //Secondary
+        {
+            Debug.Log("Colliding with Obstacle");
+        }
+        else //Default
+        {
+            Debug.Log("...");
+        }
+     
+
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
+     Debug.Log("You have entered the trigger!")   
     }
 
 

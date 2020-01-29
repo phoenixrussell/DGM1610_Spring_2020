@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    public float speed;
+    public float turnSpeed;
+    public float verticleInput;
+    public float horizontalInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +18,15 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       transform.Translate(0,0,.05f);
+        verticleInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        
+       transform.Translate(Vector3.forward*speed*Time.deltaTime*verticleInput);
+        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
+        //(x,y,z)
         
     }
-
+    /*
     //Detect collision with another object
      void OnCollisionEnter(Collision other)
     {
@@ -38,12 +48,12 @@ public class Move : MonoBehaviour
 
 
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
      Debug.Log("You have entered the trigger!")   
     }
-
+    */
 
 
 

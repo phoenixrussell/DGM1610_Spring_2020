@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class Destroy : MonoBehaviour
+
+    public int timeToDestroy;
 {
-    public int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,15 +15,6 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(GameObject, timeToDestroy)
     }
-    /*
-    public static void AddPoints(int pointsToAdd)
-    {
-        score +=pointsToAdd
-        Debug.Log("Game Score: " + score);
-        
-
-    }
-    */
 }
